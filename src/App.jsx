@@ -1,4 +1,5 @@
-import './assets/App.css'
+import './assets/index.css'  // Tailwind trước
+import './assets/App.css'   // App CSS sau
 import { RouterProvider } from 'react-router-dom'
 import router from './router/Router'
 
