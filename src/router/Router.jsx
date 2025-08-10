@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div className="text-primary bg-secondary p-4 text-2xl">this path is /</div>,
+    element: <Home></Home>,
     errorElement: (
-      <div className="text-[200px] text-red-500">404 Not Found</div>
+      <div className="text-[200px] text-red-500" > 404 Not Found</div>
     ),
   },
 ]);
