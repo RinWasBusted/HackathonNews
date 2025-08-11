@@ -1,41 +1,55 @@
 import HackathonNewsLogo from '../assets/HackathonNewsLogo.png'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Header() {
     const navList = [
+        {
+            content: 'Events',
+            goto: '',
+        },
         {
             content: 'Blog',
             goto: '',
         },
         {
-            content: 'Project',
+            content: 'Contact',
             goto: '',
-        },
-        {
-            content: 'About',
-            goto: '',
-        },
-        {
-            content: 'Newsletter',
-            goto: '',
-        },
+        }
     ];
 
     const [theme, setTheme] = useState(true);
+    const [showNavbar, setShowNavbar] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => setShowNavbar(false);
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, [])
 
     return (
-        <header className="w-full h-25 flex justify-between items-center px-8">
-            <figure className='h-full flex items-center'>
-                <img src={HackathonNewsLogo} alt="Logo" className='h-full' />
-                <span className='text-[30px] font-[700] translate-x-[-20px] translate-y-2 hidden lg:flex'>ackathon News</span>
-            </figure>
+        <>
+            <div className={`absolute bg-black/30 w-full h-full left-0 z-5 lg:hidden duration-100 ${showNavbar ? "opacity-100" : 'opacity-0'}`}></div>
 
-            <nav className='flex items-center justify-between gap-5 text-[20px]'>
+            <header className="w-full h-15 sm:h-25 flex justify-between items-center px-8 relative z-10 bg-primary">
+                <figure className='h-full flex items-center select-none cursor-pointer'>
+                    <img src={HackathonNewsLogo} alt="Logo" className='h-full' />
+                    <span className='text-[30px] font-[700] translate-x-[-20px] translate-y-2 hidden lg:flex'>ackathon News</span>
+                </figure>
 
-                {navList.map((item, index) => <button key={index} className='h-10 cursor-pointer duration-200 relative after:absolute after:w-full after:bottom-0 after:h-0.5 after:bg-secondary after:left-0 after:origin-left after:duration-100 after:scale-x-0 hover:after:scale-x-100 px-3'>{item.content}</button>)}
+                <div className='h-10 text-[30px] flex justify-center items-center cursor-pointer lg:hidden' onClick={() => setShowNavbar(s => !s)}>
+                    <i className={`fa-solid duration-100 ${showNavbar ? 'fa-xmark' : 'fa-bars'}`}></i>
+                </div>
 
-                <div className={`h-10 w-24 rounded-[20px] duration-200 ${theme ? 'bg-secondary border-primary after:bg-primary' : 'bg-primary border-secondary after:bg-secondary after:translate-x-14'} border-1 cursor-pointer after:h-6 after:w-6 after:duration-200 after:rounded-[50%] items-center px-2 hidden lg:flex`} onClick={() => setTheme(t => !t)}></div>
-            </nav>
-        </header>
+                <nav className={`flex lg:flex-row items-center justify-between gap-10 lg:gap-5 text-[20px] lg:relative absolute flex-col max-lg:right-0 max-lg:top-[100%] max-lg:w-[50vw] z-10 bg-primary overflow-hidden max-lg:py-10 duration-200 ${showNavbar ? 'translate-x-0' : 'translate-x-[100%]'} lg:translate-0`}>
+
+                    {navList.map((item, index) => <button key={index} className='h-10 w-full cursor-pointer duration-200 relative after:absolute after:w-full after:bottom-0 after:h-0.5 after:bg-secondary after:left-0 after:origin-left after:duration-100 after:scale-x-0 hover:after:scale-x-100 px-3'>{item.content}</button>)}
+
+                    <div className={`h-10 w-24 shrink-0 rounded-[20px] duration-200 ${theme ? 'bg-secondary border-primary after:bg-primary' : 'bg-primary border-secondary after:bg-secondary after:translate-x-14'} border-1 cursor-pointer after:h-6 after:w-6 after:duration-200 after:rounded-[50%] items-center px-2 flex`} onClick={() => setTheme(t => !t)}></div>
+                </nav>
+            </header>
+        </>
+
     )
 }
