@@ -1,5 +1,7 @@
 import HackathonNewsLogo from '../assets/HackathonNewsLogo.png'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import DonateQR from '../assets/DonateQR.jpg'
 
 export default function Footer() {
     const navList = [
@@ -20,6 +22,9 @@ export default function Footer() {
             goto: '/contact',
         }
     ];
+
+    const [showDonate, setShowDonate] = useState(false);
+
 
     return (
         <>
@@ -43,7 +48,11 @@ export default function Footer() {
                 <section className='text-primary font-bold flex flex-col gap-5 shrink-0 flex-1 border-white/20 max-lg:border-b-1 pb-5'>
                     <h3 className='font-[600] text-[20px]'>Finding usefull</h3>
 
-                    <button type='button' className='border-primary border-2 rounded-[5px] px-4 py-2 cursor-pointer w-fit hover:bg-primary duration hover:text-secondary group'>Buy me a coffee <i className="fa-solid fa-mug-hot group-hover:scale-130 group-hover:rotate-12 duration-300"></i> ?</button>
+                    <button type='button' className='border-primary border-2 rounded-[5px] px-4 py-2 cursor-pointer w-fit hover:bg-primary duration hover:text-secondary group' onClick={() => setShowDonate(s => !s)}>Buy me a coffee <i className="fa-solid fa-mug-hot group-hover:scale-130 group-hover:rotate-12 duration-300"></i> ?</button>
+
+                    <figure className={`w-30 ${showDonate ? '' : 'scale-y-0'} origin-top overflow-hidden duration-200`}>
+                        <img src={DonateQR} alt="DonateQR" className='h-full' />
+                    </figure>
                 </section>
 
                 <section className='flex flex-col gap-5 shrink-0 flex-1  border-white/20 max-lg:border-b-1 pb-5'>

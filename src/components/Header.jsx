@@ -35,12 +35,12 @@ export default function Header() {
 
     return (
         <>
-            <div className={`fixed bg-black/50 w-full h-full left-0 z-5 lg:hidden duration-100 ${showNavbar ? "opacity-100" : 'opacity-0'}`}></div>
+            <div className={`fixed bg-black/50 w-full h-full left-0  lg:hidden duration-100 ${showNavbar ? "opacity-100 z-5" : 'opacity-0 z-[-1]'}`}></div>
 
             <header className="max-w-[1280px] w-full h-15 sm:h-25 flex justify-between items-center px-8 relative z-10 bg-primary font-[500]">
                 <figure className='h-full flex items-center select-none cursor-pointer'>
-                    <img src={HackathonNewsLogo} alt="Logo" className='h-full' />
-                    <span className='text-[30px] font-[700] translate-x-[-20px] translate-y-2 hidden lg:flex'>ackathon News</span>
+                    <img src={HackathonNewsLogo} alt="Logo" className='h-[50%]' />
+                    <span className='text-[30px] font-[700] translate-y-2 hidden lg:flex'>ackathon News</span>
                 </figure>
 
                 <div className='h-10 text-[30px] flex justify-center items-center cursor-pointer lg:hidden' onClick={() => setShowNavbar(s => !s)}>
