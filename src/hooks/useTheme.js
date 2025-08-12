@@ -7,14 +7,14 @@ const themes = {
   light: {
     "--primary-color": "#ffffff",
     "--secondary-color": "#1a1a1a",
-    "--accent-color": "#3b82f6",
+    "--accent-color": "#6941C6",
     "--background-color": "#ffffff",
     "--text-color": "#1a1a1a",
   },
   dark: {
     "--primary-color": "#1a1a1a",
     "--secondary-color": "#ffffff",
-    "--accent-color": "#60a5fa",
+    "--accent-color": "#6941C6",
     "--background-color": "#1a1a1a",
     "--text-color": "#ffffff",
   },

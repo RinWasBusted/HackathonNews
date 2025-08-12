@@ -7,7 +7,7 @@ import router from './router/Router'
 function App() {
 
   return (
-    <div className='flex justify-center w-full text-secondary overflow-hidden min-h-[100vh]'>
+    <div className='flex justify-center w-full text-secondary overflow-x-hidden min-h-[100vh]'>
       <RouterProvider router={router}></RouterProvider>
     </div>
   )
