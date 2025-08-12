@@ -1,6 +1,7 @@
 import HackathonNewsLogo from '../assets/HackathonNewsLogo.png'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import useTheme from '../hooks/useTheme';
 
 export default function Header() {
     const navList = [
@@ -22,7 +23,7 @@ export default function Header() {
         }
     ];
 
-    const [theme, setTheme] = useState(true);
+    const { toggleTheme, isLight } = useTheme();
     const [showNavbar, setShowNavbar] = useState(false);
 
     useEffect(() => {
@@ -51,9 +52,9 @@ export default function Header() {
 
                     {navList.map((item, index) => <Link key={index} to={item.goto} className='h-10 w-full cursor-pointer duration-200 relative after:absolute after:w-full after:bottom-0 after:h-0.5 after:bg-secondary after:left-0 after:origin-left after:duration-100 after:scale-x-0 hover:after:scale-x-100 px-3'>{item.content}</Link>)}
 
-                    <div className={`h-10 w-24 shrink-0 rounded-[20px] duration-200 ${theme ? 'bg-black border-white after:bg-white' : 'bg-white border-black after:bg-black after:translate-x-14'} border-1 cursor-pointer after:h-6 after:w-6 after:duration-200 after:rounded-[50%] items-center px-2 flex relative`} onClick={() => setTheme(t => !t)}>
-                        <i className={`fa-solid fa-sun text-black absolute left-2.5 translate-y-[0.5px] z-10 duration-100 ${theme ? 'opacity-100' : 'opacity-0'}`}></i>
-                        <i className={`fa-solid fa-moon text-white absolute right-3 translate-y-[0.5px] z-10 duration-100 ${theme ? 'opacity-0' : 'opacity-100'}`}></i>
+                    <div className={`h-10 w-24 shrink-0 rounded-[20px] duration-200 ${isLight ? 'bg-black border-white after:bg-white' : 'bg-white border-black after:bg-black after:translate-x-14'} border-1 cursor-pointer after:h-6 after:w-6 after:duration-200 after:rounded-[50%] items-center px-2 flex relative`} onClick={toggleTheme}>
+                        <i className={`fa-solid fa-sun text-black absolute left-2.5 translate-y-[0.5px] z-10 duration-100 ${isLight ? 'opacity-100' : 'opacity-0'}`}></i>
+                        <i className={`fa-solid fa-moon text-white absolute right-3 translate-y-[0.5px] z-10 duration-100 ${isLight ? 'opacity-0' : 'opacity-100'}`}></i>
                     </div>
                 </nav>
             </header>

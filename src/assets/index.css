@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: white;
+  /* Default light theme - sẽ được override bởi useTheme hook */
+  --primary-color: #ffffff;
   --secondary-color: #1a1a1a;
+  --accent-color: #3b82f6;
+  --background-color: #ffffff;
+  --text-color: #1a1a1a;
+
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -12,4 +17,7 @@
 @theme {
   --color-primary: var(--primary-color);
   --color-secondary: var(--secondary-color);
+  --color-accent: var(--accent-color);
+  --color-background: var(--background-color);
+  --color-text: var(--text-color);
 }
