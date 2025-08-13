@@ -2,6 +2,7 @@ import HackathonNewsLogo from '../assets/HackathonNewsLogo.png'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import useTheme from '../hooks/useTheme';
+import SideBoard from './home-page/side-board/SideBoard';
 
 export default function Header() {
     const navList = [
@@ -48,7 +49,7 @@ export default function Header() {
                     <i className={`fa-solid duration-100 ${showNavbar ? 'fa-xmark' : 'fa-bars'}`}></i>
                 </div>
 
-                <nav className={`flex lg:flex-row items-center justify-between gap-10 lg:gap-5 text-[20px] lg:relative absolute flex-col max-lg:right-0 max-lg:top-[100%] max-lg:w-[50vw] z-10 bg-primary overflow-hidden max-lg:py-10 duration-200 ${showNavbar ? 'translate-x-0' : 'translate-x-[100%]'} lg:translate-0`}>
+                <nav className={`flex lg:flex-row items-center justify-between gap-10 lg:gap-5 text-[20px] lg:relative absolute flex-col max-lg:right-0 max-lg:top-[100%] max-lg:w-[80vw] z-10 bg-primary overflow-hidden max-lg:py-10 duration-200 ${showNavbar ? 'translate-x-0' : 'translate-x-[100%]'} lg:translate-0`}>
 
                     {navList.map((item, index) => <Link key={index} to={item.goto} className='h-10 w-full cursor-pointer duration-200 relative after:absolute after:w-full after:bottom-0 after:h-0.5 after:bg-secondary after:left-0 after:origin-left after:duration-100 after:scale-x-0 hover:after:scale-x-100 px-3'>{item.content}</Link>)}
 
@@ -56,6 +57,10 @@ export default function Header() {
                         <i className={`fa-solid fa-sun text-black absolute left-2.5 translate-y-[0.5px] z-10 duration-100 ${isLight ? 'opacity-100' : 'opacity-0'}`}></i>
                         <i className={`fa-solid fa-moon text-white absolute right-3 translate-y-[0.5px] z-10 duration-100 ${isLight ? 'opacity-0' : 'opacity-100'}`}></i>
                     </div>
+
+                    <section className='lg:hidden w-full'>
+                        <SideBoard></SideBoard>
+                    </section>
                 </nav>
             </header>
         </>

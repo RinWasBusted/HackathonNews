@@ -1,9 +1,8 @@
-import Post from "./Post"
 import Example from '../../../assets/Example.jpg'
-import { useState } from "react"
+import MiniPost from "./MiniPost"
 
-export default function RecentEvent() {
-    const eventList = [
+export default function SideBoard() {
+    const sidePostList = [
         {
             id: 1,
             banner: Example,
@@ -25,19 +24,11 @@ export default function RecentEvent() {
             banner: Example,
             title: 'Cuoc thi hackathon DHQG HCM',
             progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
+            tags: ['AI', 'Blockchain', 'UX/UI Design', 'Frontend'],
             desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
         },
         {
-            id: 1,
-            banner: Example,
-            title: 'Cuoc thi hackathon DHQG HCM',
-            progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
-        },
-        {
-            id: 2,
+            id: 4,
             banner: Example,
             title: 'Cuoc thi hackathon DHQG HCM',
             progress: 'Prepare',
@@ -45,31 +36,22 @@ export default function RecentEvent() {
             desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.'
         },
         {
-            id: 3,
+            id: 5,
             banner: Example,
             title: 'Cuoc thi hackathon DHQG HCM',
             progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
+            tags: ['AI', 'Blockchain', 'UX/UI Design', 'Frontend'],
             desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
         },
     ]
 
-    const [postNum, setPostNum] = useState(Math.min(eventList.length, 3));
-
-    const handleShowMore = () => {
-        const newPostNum = Math.min(postNum + 3, eventList.length);
-        setPostNum(newPostNum);
-    }
-
     return (
-        <section className="w-full py-10 px-8">
-            <h2 className="text-[24px] font-semibold mb-10">Recent event posts</h2>
+        <aside className="w-full flex flex-col gap-5 p-10">
+            <h3 className="text-[20px] font-[600] w-full border-secondary border-b-1 pb-5 mb-5">You might interested in</h3>
 
             <main className="flex flex-col items-center gap-10 w-full">
-                {eventList.slice(0, postNum).map((event) => <Post key={event.id} event={event}></Post>)}
-
-                <div className="cursor-pointer hover:underline" onClick={handleShowMore}>Show more</div>
+                {sidePostList.map((event) => <MiniPost key={event.id} event={event}></MiniPost>)}
             </main>
-        </section>
+        </aside>
     )
 }

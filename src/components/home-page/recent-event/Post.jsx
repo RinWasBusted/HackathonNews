@@ -1,6 +1,6 @@
 export default function Post({ event }) {
     return (
-        <div className="w-full min-h-55 flex lg:flex-row flex-col gap-5 p-5 border-1 rounded-xl border-accent shadow-2xs group cursor-pointer">
+        <div className="w-full min-h-55 flex sm:flex-row flex-col gap-5 p-5 border-1 rounded-xl border-accent shadow-2xs group cursor-pointer">
             <figure className="h-55 flex-1 overflow-hidden">
                 <img src={event.banner} alt="event banner" className="h-full object-cover group-hover:scale-110 duration-100" />
             </figure>
