@@ -35,9 +35,10 @@ export default function Header() {
         return () => window.removeEventListener('resize', handleResize);
     }, [])
 
+
     return (
         <>
-            <div className={`fixed bg-black/50 w-full h-full left-0  lg:hidden duration-100 ${showNavbar ? "opacity-100 z-5" : 'opacity-0 z-[-1]'}`}></div>
+            <div className={`fixed bg-black/50 w-full h-full left-0  lg:hidden duration-100 ${showNavbar ? "opacity-100 z-5" : 'opacity-0 z-[-1]'}`} onClick={() => setShowNavbar(false)}></div>
 
             <header className="max-w-[1280px] w-full h-15 sm:h-25 flex justify-between items-center px-8 relative z-10 bg-primary font-[500]">
                 <figure className='h-full flex items-center select-none cursor-pointer'>
