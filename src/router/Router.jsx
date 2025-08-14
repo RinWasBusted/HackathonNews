@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import InnerPost from "../pages/InnerPost";
+import Admin from "../pages/Admin";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,10 @@ const router = createBrowserRouter([
     path: "/post/:slug",
     element: <InnerPost></InnerPost>,
   },
-
+  {
+    path: "/admin/login",
+    element: <Admin></Admin>,
+  },
 ]);
 
 export default router
