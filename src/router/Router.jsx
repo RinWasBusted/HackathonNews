@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import InnerPost from "../pages/InnerPost";
 import Admin from "../pages/Admin";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,12 @@ const router = createBrowserRouter([
     element: <InnerPost></InnerPost>,
   },
   {
+    path: '/admin',
+    element: <Admin></Admin>
+  },
+  {
     path: "/admin/login",
-    element: <Admin></Admin>,
+    element: <Login></Login>,
   },
 ]);
 
