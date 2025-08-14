@@ -54,7 +54,7 @@ export default function SideBoard() {
         <aside className="w-full flex flex-col gap-5">
             <h3 className="text-[20px] font-[600] w-full border-secondary border-b-1 pb-5 mb-5">You might interested in</h3>
 
-            <main className="flex flex-col items-center gap-10 w-full">
+            <main className="flex flex-col items-center gap-5 w-full">
                 {sidePostList.map((event) => <MiniPost key={event.id} event={event}></MiniPost>)}
             </main>
         </aside>

@@ -41,16 +41,16 @@ export default function Header() {
             <div className={`fixed bg-black/50 w-full h-full left-0  lg:hidden duration-100 ${showNavbar ? "opacity-100 z-5" : 'opacity-0 z-[-1]'}`} onClick={() => setShowNavbar(false)}></div>
 
             <header className="max-w-[1280px] w-full h-15 sm:h-25 flex justify-between items-center px-8 relative z-10 bg-primary font-[500]">
-                <figure className='h-full flex items-center select-none cursor-pointer'>
+                <Link to={'/'} className='h-full flex items-center select-none cursor-pointer'>
                     <img src={HackathonNewsLogo} alt="Logo" className='h-[50%]' />
                     <span className='text-[30px] font-[700] translate-y-2 hidden lg:flex'>ackathon News</span>
-                </figure>
+                </Link>
 
                 <div className='h-10 text-[30px] flex justify-center items-center cursor-pointer lg:hidden' onClick={() => setShowNavbar(s => !s)}>
                     <i className={`fa-solid duration-100 ${showNavbar ? 'fa-xmark' : 'fa-bars'}`}></i>
                 </div>
 
-                <nav className={`flex lg:flex-row items-center justify-between gap-10 lg:gap-5 text-[20px] lg:relative absolute flex-col max-lg:right-0 max-lg:top-[100%] max-lg:w-[80vw] z-10 bg-primary overflow-hidden max-lg:py-10 duration-200 ${showNavbar ? 'translate-x-0' : 'translate-x-[100%]'} lg:translate-0`}>
+                <nav className={`flex lg:flex-row items-center justify-between gap-10 lg:gap-5 text-[20px] lg:relative absolute flex-col max-lg:right-0 max-lg:top-[100%] max-lg:w-[80vw] z-10 bg-primary overflow-hidden max-lg:py-10 duration-100 ${showNavbar ? 'translate-x-0' : 'translate-x-[100%]'} lg:translate-0`}>
 
                     {navList.map((item, index) => <Link key={index} to={item.goto} className='h-10 w-full cursor-pointer duration-200 relative after:absolute after:w-full after:bottom-0 after:h-0.5 after:bg-secondary after:left-0 after:origin-left after:duration-100 after:scale-x-0 hover:after:scale-x-100 px-3'>{item.content}</Link>)}
 
