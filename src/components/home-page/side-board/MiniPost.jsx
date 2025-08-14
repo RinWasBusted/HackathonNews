@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
+
 export default function MiniPost({ event }) {
     return (
-        <div className="w-full  sm:h-30 flex sm:flex-row flex-col gap-3 group cursor-pointer overflow-hidden">
+        <Link to={`/post/${event.slug}`} className="w-full  sm:h-30 flex sm:flex-row flex-col gap-3 group cursor-pointer overflow-hidden">
             <figure className="h-30 flex-1/2 overflow-hidden flex justify-end">
                 <img src={event.banner} alt="event banner" className="h-full object-cover group-hover:scale-110 duration-100" />
             </figure>
@@ -16,7 +18,7 @@ export default function MiniPost({ event }) {
                     {event.tags.map((tag, index) => <Tag key={index} content={tag}></Tag>)}
                 </div>
             </article>
-        </div>
+        </Link>
     )
 }
 

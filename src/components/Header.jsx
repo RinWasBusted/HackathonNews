@@ -59,7 +59,7 @@ export default function Header() {
                         <i className={`fa-solid fa-moon text-white absolute right-3 translate-y-[0.5px] z-10 duration-100 ${isLight ? 'opacity-0' : 'opacity-100'}`}></i>
                     </div>
 
-                    <section className='lg:hidden w-full'>
+                    <section className='lg:hidden w-full p-5'>
                         <SideBoard></SideBoard>
                     </section>
                 </nav>

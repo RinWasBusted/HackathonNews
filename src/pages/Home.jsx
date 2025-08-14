@@ -15,7 +15,7 @@ export default function Home() {
                     <RecentBlog></RecentBlog>
                 </div>
 
-                <div className="hidden flex-2/6 lg:inline">
+                <div className="hidden flex-2/6 lg:inline p-10">
                     <SideBoard></SideBoard>
                 </div>
             </section>

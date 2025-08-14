@@ -9,7 +9,8 @@ export default function SideBoard() {
             title: 'Cuoc thi hackathon DHQG HCM',
             progress: 'Prepare',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-example'
         },
         {
             id: 2,
@@ -17,7 +18,8 @@ export default function SideBoard() {
             title: 'Cuoc thi hackathon DHQG HCM',
             progress: 'Prepare',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-example'
         },
         {
             id: 3,
@@ -25,7 +27,8 @@ export default function SideBoard() {
             title: 'Cuoc thi hackathon DHQG HCM',
             progress: 'Prepare',
             tags: ['AI', 'Blockchain', 'UX/UI Design', 'Frontend'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-example'
         },
         {
             id: 4,
@@ -33,7 +36,8 @@ export default function SideBoard() {
             title: 'Cuoc thi hackathon DHQG HCM',
             progress: 'Prepare',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-example'
         },
         {
             id: 5,
@@ -41,12 +45,13 @@ export default function SideBoard() {
             title: 'Cuoc thi hackathon DHQG HCM',
             progress: 'Prepare',
             tags: ['AI', 'Blockchain', 'UX/UI Design', 'Frontend'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-example'
         },
     ]
 
     return (
-        <aside className="w-full flex flex-col gap-5 p-10">
+        <aside className="w-full flex flex-col gap-5">
             <h3 className="text-[20px] font-[600] w-full border-secondary border-b-1 pb-5 mb-5">You might interested in</h3>
 
             <main className="flex flex-col items-center gap-10 w-full">

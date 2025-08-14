@@ -10,7 +10,8 @@ export default function RecentBlog() {
             title: 'Cuoc thi hackathon DHQG HCM',
             date: '27-08-2006',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-xample'
         },
         {
             id: 2,
@@ -18,7 +19,8 @@ export default function RecentBlog() {
             title: 'Cuoc thi hackathon DHQG HCM',
             date: '27-08-2006',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-xample'
         },
         {
             id: 3,
@@ -26,7 +28,8 @@ export default function RecentBlog() {
             title: 'Cuoc thi hackathon DHQG HCM',
             date: '27-08-2006',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-xample'
         },
         {
             id: 1,
@@ -34,7 +37,8 @@ export default function RecentBlog() {
             title: 'Cuoc thi hackathon DHQG HCM',
             date: '27-08-2006',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-xample'
         },
         {
             id: 2,
@@ -42,7 +46,8 @@ export default function RecentBlog() {
             title: 'Cuoc thi hackathon DHQG HCM',
             date: '27-08-2006',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-xample'
         },
         {
             id: 3,
@@ -50,7 +55,8 @@ export default function RecentBlog() {
             title: 'Cuoc thi hackathon DHQG HCM',
             date: '27-08-2006',
             tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.'
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
+            slug: 'slug-xample'
         },
     ]
 

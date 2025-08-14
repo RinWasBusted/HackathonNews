@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
+
 export default function Post({ event }) {
     return (
-        <div className="w-full min-h-30 md:min-h-55 flex flex-col sm:flex-row gap-5 md:p-5 md:border-1 rounded-xl border-accent shadow-xl p-5 group cursor-pointer">
+        <Link to={`/post/${event.slug}`} className="w-full min-h-30 md:min-h-55 flex flex-col sm:flex-row gap-5 md:p-5 md:border-1 rounded-xl border-accent shadow-xl p-5 group cursor-pointer">
             <figure className="h-30 md:h-55 flex-1/3 overflow-hidden">
                 <img src={event.banner} alt="event banner" className="h-full object-cover group-hover:scale-110 duration-100" />
             </figure>
@@ -16,7 +18,7 @@ export default function Post({ event }) {
                     {event.tags.map((tag, index) => <Tag key={index} content={tag}></Tag>)}
                 </div>
             </article>
-        </div>
+        </Link>
     )
 }
 
