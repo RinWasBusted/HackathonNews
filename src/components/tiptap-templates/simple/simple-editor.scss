@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  --tt-toolbar-height: 44px;
+  --tt-theme-text: var(--tt-gray-light-900);
+
+  .dark & {
+    --tt-theme-text: var(--tt-gray-dark-900);
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--tt-theme-text);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0;
+  overscroll-behavior-y: none;
+}
+
+html,
+body {
+  overscroll-behavior-x: none;
+}
+
+html,
+body,
+#root,
+#app {
+  height: 100%;
+  background-color: var(--tt-bg-color);
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tt-scrollbar-color) transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--tt-scrollbar-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tiptap.ProseMirror {
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Override global scrollbar styles for SimpleEditor */
+.simple-editor-wrapper,
+.simple-editor-content,
+.simple-editor-content .tiptap.ProseMirror.simple-editor {
+  /* Hide scrollbar for all browsers */
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    display: none !important; /* WebKit browsers */
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    display: none !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none !important;
+  }
+}
+
+.simple-editor-wrapper {
+  width: 100%;
+  height: fit-content;
+  overflow: auto;
+
+  /* Hide scrollbar for SimpleEditor */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    display: none; /* WebKit */
+  }
+}
+
+.simple-editor-content {
+  // max-width: 648px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  /* Hide scrollbar for content area */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    display: none; /* WebKit */
+  }
+}
+
+.simple-editor-content .tiptap.ProseMirror.simple-editor {
+  flex: 1;
+  padding: 3rem 3rem 30vh;
+
+  /* Hide scrollbar for editor area */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    display: none; /* WebKit */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .simple-editor-content .tiptap.ProseMirror.simple-editor {
+    padding: 1rem 1.5rem 30vh;
+  }
+}
