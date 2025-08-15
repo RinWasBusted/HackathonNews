@@ -10,18 +10,22 @@ function SideBar() {
     {
       content: "Write new post",
       icon: "fa-solid fa-feather",
+      path: '/admin/write-new-post'
     },
     {
-      content: "Events",
+      content: "Posts",
       icon: "fa-regular fa-calendar",
+      path: '/admin/post/event'
     },
-    {
-      content: "Blogs",
-      icon: "fa-solid fa-user",
-    },
+    // {
+    //   content: "Blogs",
+    //   icon: "fa-solid fa-user",
+    //   path: '/admin/blogs'
+    // },
     {
       content: "Setting",
       icon: "fa-solid fa-gear",
+      path: '/admin/setting'
     },
   ];
 
@@ -52,7 +56,7 @@ function SideBar() {
 
         <nav
           className={`relative left-0 flex w-50 bg-white h-[100vh] flex-col pt-30 pb-10 items-center lg:translate-0 lg:shadow-2xl justify-between  translate-x-[-100%] origin-left duration-200   ${showSideBar ? "shadow-2xl !translate-0" : ""
-            } ${expand ? "" : "!w-13"}`}
+            } ${expand ? "overflow-hidden" : "!w-13"}`}
         >
           {/* ~~~~~~~~~~~~~~~~~~~~~~~~~EXPAND BUTTON~~~~~~~~~~~~~~~~~~~~ */}
           <div
@@ -73,7 +77,7 @@ function SideBar() {
             className={`w-[30%] absolute top-10 cursor-pointer hover:scale-[110%] duration-200 ${expand ? "" : "invisible"
               }`}
           >
-            <img src={Logo} alt="TVT LOGO" />
+            <img src={Logo} alt="LOGO" />
           </a>
 
           {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Menu~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
