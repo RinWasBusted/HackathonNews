@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import EventBoard from "../components/admin-page/post-board/event-board/EventBoard";
 import BlogBoard from "../components/admin-page/post-board/blog-board/BlogBoard";
 import PostBoard from "../components/admin-page/post-board/PostBoard";
+import WriteNewPostBoard from "../components/admin-page/write-new-post-board/WriteNewPostBoard";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             element: <BlogBoard></BlogBoard>
           },
         ]
+      },
+      {
+        path: 'write-new-post',
+        element: <WriteNewPostBoard></WriteNewPostBoard>
       }
     ]
   },

@@ -12,7 +12,7 @@ export default function PostCard({ post }) {
                 <figure className="h-full aspect-5/3 overflow-hidden rounded-2xl shrink-0">
                     <img src={post.banner} alt={`event-${post.id}-banner`} className="h-full w-full object-cover" />
                 </figure>
-                <article>
+                <article className="h-full overflow-hidden">
                     <h4 className="text-[18px] font-[600]">{post.title}</h4>
                     <p className="text-[13px]">{post.desc}</p>
                 </article>

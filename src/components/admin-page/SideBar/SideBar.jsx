@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Logo from "../../../assets/HackathonNewsLogo.png";
 import Menu from "./Menu.jsx";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   const [expand, setExpand] = useState(false);
@@ -55,7 +56,7 @@ function SideBar() {
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NAV BAR~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
 
         <nav
-          className={`relative left-0 flex w-50 bg-white h-[100vh] flex-col pt-30 pb-10 items-center lg:translate-0 lg:shadow-2xl justify-between  translate-x-[-100%] origin-left duration-200   ${showSideBar ? "shadow-2xl !translate-0" : ""
+          className={` fixed top-0 left-0 flex w-50 bg-white h-[100vh] flex-col pt-30 pb-10 items-center lg:translate-0 border-r-2 justify-between  translate-x-[-100%] origin-left duration-200   ${showSideBar ? " !translate-0" : ""
             } ${expand ? "overflow-hidden" : "!w-13"}`}
         >
           {/* ~~~~~~~~~~~~~~~~~~~~~~~~~EXPAND BUTTON~~~~~~~~~~~~~~~~~~~~ */}
@@ -73,12 +74,12 @@ function SideBar() {
 
           {/* ~~~~~~~~~~~~~~~~~~~~~~~~LOGO~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
 
-          <a
-            className={`w-[30%] absolute top-10 cursor-pointer hover:scale-[110%] duration-200 ${expand ? "" : "invisible"
+          <Link to={'/'}
+            className={`w-[30%] absolute top-15 cursor-pointer hover:scale-[110%] duration-200 ${expand ? "" : "w-[70%]"
               }`}
           >
             <img src={Logo} alt="LOGO" />
-          </a>
+          </Link>
 
           {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Menu~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
 
