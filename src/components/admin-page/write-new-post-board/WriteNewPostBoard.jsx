@@ -1,16 +1,17 @@
 import Example from '../../../assets/Example.jpg'
+import addPost from '../../../services/addPost'
 import PostEditor from "../../post-editor/PostEditor"
 
 export default function WriteNewPostBoard() {
-    const post = {
-        id: 1,
-        type: 'event',
-        banner: Example,
-        title: 'This is a post title',
-        desc: 'This is a post description',
-        progress: 'past',
-        date: '2006-08-27',
-        content: '<h1>Xin chào tất cả mọi người</h1><p style="text-align: right; ">Mình tên là Phạm Hoàng Thái</p><p></p>',
+
+
+    function onSubmit(post) {
+        try {
+            addPost('events', post);
+            console.log('You have posted a new events!', post)
+        } catch (e) {
+            console.error('failed to use addPost function!' + e);
+        }
     }
 
     return (
@@ -19,7 +20,7 @@ export default function WriteNewPostBoard() {
                 Write new post
             </h2>
 
-            <PostEditor defaultValues={post}></PostEditor>
+            <PostEditor onSubmit={onSubmit}></PostEditor>
         </div>
     )
 }

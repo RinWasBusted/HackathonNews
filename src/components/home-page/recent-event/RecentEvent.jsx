@@ -1,66 +1,27 @@
 import Post from "./Post"
 import Example from '../../../assets/Example.jpg'
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import getPostData from "../../../services/getPostData";
 
 export default function RecentEvent() {
-    const eventList = [
-        {
-            id: 1,
-            banner: Example,
-            title: 'Cuoc thi hackathon DHQG HCM',
-            progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
-            slug: 'slug-example'
-        },
-        {
-            id: 2,
-            banner: Example,
-            title: 'Cuoc thi hackathon DHQG HCM',
-            progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.',
-            slug: 'slug-example'
-        },
-        {
-            id: 3,
-            banner: Example,
-            title: 'Cuoc thi hackathon DHQG HCM',
-            progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
-            slug: 'slug-example'
-        },
-        {
-            id: 1,
-            banner: Example,
-            title: 'Cuoc thi hackathon DHQG HCM',
-            progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
-            slug: 'slug-example'
-        },
-        {
-            id: 2,
-            banner: Example,
-            title: 'Cuoc thi hackathon DHQG HCM',
-            progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus. Esse expedita neque perspiciatis eum animi necessitatibus.',
-            slug: 'slug-example'
-        },
-        {
-            id: 3,
-            banner: Example,
-            title: 'Cuoc thi hackathon DHQG HCM',
-            progress: 'Prepare',
-            tags: ['AI', 'Blockchain'],
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus.',
-            slug: 'slug-example'
-        },
-    ]
+    const [eventList, setEventList] = useState([]);
 
-    const [postNum, setPostNum] = useState(Math.min(eventList.length, 3));
+    useEffect(() => {
+        try {
+            const getData = async () => {
+                const data = await getPostData('events');
+                setEventList(data);
+            };
+
+            getData();
+        } catch (e) {
+            console.error('Failed to get post data from getPostData function' + e);
+        }
+
+    }, [])
+
+    const [postNum, setPostNum] = useState(Math.min(eventList.length + 1, 3));
+    console.log(postNum)
 
     const handleShowMore = () => {
         const newPostNum = Math.min(postNum + 3, eventList.length);

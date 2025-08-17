@@ -1,19 +1,22 @@
 import { useForm, Controller } from "react-hook-form"
 import { SimpleEditor } from '@/components/tiptap-templates/simple/simple-editor'
 
-export default function PostEditor({ defaultValues }) {
+export default function PostEditor({ defaultValues = {
+    type: 'event',
+    banner: null,
+    title: '',
+    desc: '',
+    progress: 'upcoming',
+    date: '',
+    content: '',
+    tags: [],
+}, onSubmit }) {
     const { register, handleSubmit, control, watch } = useForm({
         defaultValues: defaultValues,
     })
 
-    console.log(defaultValues);
-
     const postType = watch('type')
     const previewBanner = watch('banner')
-
-    const onSubmit = (data) => {
-        console.log(data)
-    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="h-fit w-full max-w-250 flex flex-col items-center p-10 shadow-2xl gap-5 ">

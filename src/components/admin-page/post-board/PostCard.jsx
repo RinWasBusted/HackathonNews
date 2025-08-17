@@ -21,9 +21,9 @@ export default function PostCard({ post }) {
             <section className="h-full flex flex-col">
                 <h3 className="font-[600] text-[16px]">Actions</h3>
                 <div className="flex flex-col justify-between h-full">
-                    <button className="bg-cyan-400 h-6 w-6 rounded-[5px] cursor-pointer text-[13px] hover:text-white duration-100">
+                    <Link to={`/admin/post/edit/${post.id}`} className="bg-cyan-400 h-6 w-6 rounded-[5px] cursor-pointer text-[13px] hover:text-white duration-100 flex justify-center items-center">
                         <i className="fa-solid fa-pen"></i>
-                    </button>
+                    </Link>
 
                     <button className="bg-red-400 h-6 w-6 rounded-[5px] cursor-pointer text-[13px] hover:text-white duration-100">
                         <i class="fa-solid fa-trash-can"></i>

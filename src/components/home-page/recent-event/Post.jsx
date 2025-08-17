@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 export default function Post({ event }) {
+    console.log('Called post')
     return (
         <Link to={`/post/${event.slug}`} className="w-full min-h-30 md:min-h-55 flex flex-col sm:flex-row gap-5 md:p-5 md:border-1 rounded-xl border-accent shadow-xl p-5 group cursor-pointer">
             <figure className="h-30 md:h-55 flex-1/3 overflow-hidden">

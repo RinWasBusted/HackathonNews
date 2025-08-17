@@ -8,6 +8,7 @@ import EventBoard from "../components/admin-page/post-board/event-board/EventBoa
 import BlogBoard from "../components/admin-page/post-board/blog-board/BlogBoard";
 import PostBoard from "../components/admin-page/post-board/PostBoard";
 import WriteNewPostBoard from "../components/admin-page/write-new-post-board/WriteNewPostBoard";
+import PostEditor from "../components/post-editor/PostEditor";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             path: 'blog',
             element: <BlogBoard></BlogBoard>
           },
+          {
+            path: 'edit/:slug',
+            element: <PostEditor></PostEditor>,
+          }
         ]
       },
       {
