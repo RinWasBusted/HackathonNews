@@ -8,7 +8,7 @@ import RecentBlog from "../components/home-page/recent-blog/RecentBlog"
 export default function Home() {
     ScrollToTop();
 
-    return <div className="h-full w-full flex flex-col items-center bg-primary">
+    return <div className=" h-fit w-full flex flex-col items-center bg-primary">
         <Layout>
             <HeroBanner></HeroBanner>
 

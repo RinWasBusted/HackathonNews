@@ -4,25 +4,35 @@ import Example from '../assets/Example.jpg'
 import SideBoard from "../components/home-page/side-board/SideBoard";
 import Post from "../components/inner-post/post/Post";
 import RecentBlog from "../components/home-page/recent-blog/RecentBlog";
+import { useState, useEffect } from "react";
+import getPost from '../services/getPost'
+import { useParams } from "react-router-dom";
 
 
 export default function InnerPost() {
     ScrollToTop();
 
-    const post = {
-        id: 1,
-        type: 'event',
-        banner: Example,
-        title: 'Cuoc thi hackathon DHQG HCM',
-        progress: 'Prepare',
-        date: '27-08-2006',
-        tags: ['AI', 'Blockchain'],
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestiae laboriosam provident autem unde repudiandae voluptates, ipsum exercitationem maiores ipsam quae fugit corporis! Ratione aut dolor impedit. Veniam eaque nihil reprehenderit nostrum, architecto eum harum iste nulla id ut sit, modi, esse provident cupiditate delectus. Facilis mollitia numquam saepe quibusdam voluptas libero voluptatum deserunt repellat dolore optio perferendis cupiditate, asperiores iusto voluptates autem dolorum, ratione illum? Magnam nulla perspiciatis unde. Aperiam velit in repellat nostrum nisi provident possimus eaque dolor, fugit aliquam consectetur praesentium quae porro, ipsum mollitia tempora excepturi a. At et tenetur saepe, fugit consequatur obcaecati perferendis minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestiae laboriosam provident autem unde repudiandae voluptates, ipsum exercitationem maiores ipsam quae fugit corporis! Ratione aut dolor impedit. Veniam eaque nihil reprehenderit nostrum, architecto eum harum iste nulla id ut sit, modi, esse provident cupiditate delectus. Facilis mollitia numquam saepe quibusdam voluptas libero voluptatum deserunt repellat dolore optio perferendis cupiditate, asperiores iusto voluptates autem dolorum, ratione illum? Magnam nulla perspiciatis unde. Aperiam velit in repellat nostrum nisi provident possimus eaque dolor, fugit aliquam consectetur praesentium quae porro, ipsum mollitia tempora excepturi a. At et tenetur saepe, fugit consequatur obcaecati perferendis minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestiae laboriosam provident autem unde repudiandae voluptates, ipsum exercitationem maiores ipsam quae fugit corporis! Ratione aut dolor impedit. Veniam eaque nihil reprehenderit nostrum, architecto eum harum iste nulla id ut sit, modi, esse provident cupiditate delectus. Facilis mollitia numquam saepe quibusdam voluptas libero voluptatum deserunt repellat dolore optio perferendis cupiditate, asperiores iusto voluptates autem dolorum, ratione illum? Magnam nulla perspiciatis unde. Aperiam velit in repellat nostrum nisi provident possimus eaque dolor, fugit aliquam consectetur praesentium quae porro, ipsum mollitia tempora excepturi a. At et tenetur saepe, fugit consequatur obcaecati perferendis minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita neque perspiciatis eum animi necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestiae laboriosam provident autem unde repudiandae voluptates, ipsum exercitationem maiores ipsam quae fugit corporis! Ratione aut dolor impedit. Veniam eaque nihil reprehenderit nostrum, architecto eum harum iste nulla id ut sit, modi, esse provident cupiditate delectus. Facilis mollitia numquam saepe quibusdam voluptas libero voluptatum deserunt repellat dolore optio perferendis cupiditate, asperiores iusto voluptates autem dolorum, ratione illum? Magnam nulla perspiciatis unde. Aperiam velit in repellat nostrum nisi provident possimus eaque dolor, fugit aliquam consectetur praesentium quae porro, ipsum mollitia tempora excepturi a. At et tenetur saepe, fugit consequatur obcaecati perferendis minus.',
-        slug: 'slug-example'
-    };
+    const [post, setPost] = useState({});
+
+    const { postType, id } = useParams();
+
+    useEffect(() => {
+        try {
+            async function fetchPostData() {
+                const data = await getPost(postType, id);
+                setPost(data);
+            };
+
+            if (postType && id) {
+                fetchPostData();
+            }
+        } catch (e) {
+            console.error('Failed to fetch post data' + e);
+        }
+    }, [postType, id])
 
     return (
-        <div className="h-full w-full flex flex-col items-center bg-primary">
+        <div className="h-fit w-full flex flex-col items-center bg-primary">
             <Layout>
                 <main className="flex max-w-[1280px] w-full flex-wrap">
                     <section className='w-full relative flex flex-col items-center overflow-hidden flex-1 lg:flex-4/6 p-10'>

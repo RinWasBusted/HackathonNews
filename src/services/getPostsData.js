@@ -1,7 +1,7 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
-export default async function getPostData(collectionName) {
+export default async function getPostsData(collectionName) {
   try {
     const collectionRef = collection(db, collectionName);
     const snapshot = await getDocs(collectionRef);

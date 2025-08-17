@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function PostCard({ post }) {
+export default function PostCard({ post, postType }) {
     return (
         <div className="flex justify-between h-30 px-10 gap-5 py-5 border-t-1 border-black/50 hover:bg-black/10">
             <section className="h-full w-20 shrink-0">
@@ -8,7 +8,7 @@ export default function PostCard({ post }) {
                 <p>{post.id}</p>
             </section>
 
-            <Link to={`/post/${post.slug}`} className="flex grow-1 gap-2 cursor-pointer">
+            <Link to={`/post/${postType}/${post.slug}/${post.id}`} className="flex grow-1 gap-2 cursor-pointer">
                 <figure className="h-full aspect-5/3 overflow-hidden rounded-2xl shrink-0">
                     <img src={post.banner} alt={`event-${post.id}-banner`} className="h-full w-full object-cover" />
                 </figure>
@@ -21,7 +21,7 @@ export default function PostCard({ post }) {
             <section className="h-full flex flex-col">
                 <h3 className="font-[600] text-[16px]">Actions</h3>
                 <div className="flex flex-col justify-between h-full">
-                    <Link to={`/admin/post/edit/${post.id}`} className="bg-cyan-400 h-6 w-6 rounded-[5px] cursor-pointer text-[13px] hover:text-white duration-100 flex justify-center items-center">
+                    <Link to={`/admin/post/edit/${postType}/${post.id}`} className="bg-cyan-400 h-6 w-6 rounded-[5px] cursor-pointer text-[13px] hover:text-white duration-100 flex justify-center items-center">
                         <i className="fa-solid fa-pen"></i>
                     </Link>
 

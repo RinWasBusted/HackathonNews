@@ -1,7 +1,7 @@
 import Post from "./Post"
 import Example from '../../../assets/Example.jpg'
 import { useState, useEffect } from "react"
-import getPostData from "../../../services/getPostData";
+import getPostsData from "../../../services/getPostsData";
 
 export default function RecentEvent() {
     const [eventList, setEventList] = useState([]);
@@ -9,7 +9,7 @@ export default function RecentEvent() {
     useEffect(() => {
         try {
             const getData = async () => {
-                const data = await getPostData('events');
+                const data = await getPostsData('events');
                 setEventList(data);
             };
 
@@ -17,10 +17,14 @@ export default function RecentEvent() {
         } catch (e) {
             console.error('Failed to get post data from getPostData function' + e);
         }
-
     }, [])
 
-    const [postNum, setPostNum] = useState(Math.min(eventList.length + 1, 3));
+    useEffect(() => {
+        setPostNum(Math.min(eventList.length, 3))
+
+    }, [eventList])
+
+    const [postNum, setPostNum] = useState(0);
     console.log(postNum)
 
     const handleShowMore = () => {

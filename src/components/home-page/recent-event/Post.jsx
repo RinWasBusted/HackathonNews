@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export default function Post({ event }) {
     console.log('Called post')
     return (
-        <Link to={`/post/${event.slug}`} className="w-full min-h-30 md:min-h-55 flex flex-col sm:flex-row gap-5 md:p-5 md:border-1 rounded-xl border-accent shadow-xl p-5 group cursor-pointer">
+        <Link to={`/post/events/${event.slug}/${event.id}`} className="w-full min-h-30 md:min-h-55 flex flex-col sm:flex-row gap-5 md:p-5 md:border-1 rounded-xl border-accent shadow-xl p-5 group cursor-pointer">
             <figure className="h-30 md:h-55 flex-1/3 overflow-hidden">
                 <img src={event.banner} alt="event banner" className="h-full object-cover group-hover:scale-110 duration-100" />
             </figure>
@@ -16,7 +16,7 @@ export default function Post({ event }) {
                 <p className=" text-[10px] md:text-[16px] opacity-70">{event.desc}</p>
 
                 <div className="flex gap-2 mt-auto">
-                    {event.tags.map((tag, index) => <Tag key={index} content={tag}></Tag>)}
+                    {event.tags.map((tag, index) => <Tag key={index} content={tag.value}></Tag>)}
                 </div>
             </article>
         </Link>

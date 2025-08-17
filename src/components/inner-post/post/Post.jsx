@@ -14,9 +14,9 @@ export default function Post({ post }) {
                     {post.type === 'event' ? post.progress : post.date}
                 </p>
 
-                <p className="mt-5">
-                    {post.content}
-                </p>
+                <div className="mt-5 post-content w-full" dangerouslySetInnerHTML={{ __html: post.content }}>
+                    {/* {post.content} */}
+                </div>
             </article>
         </>
     )

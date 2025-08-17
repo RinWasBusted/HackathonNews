@@ -1,8 +1,7 @@
-import { data } from 'react-router-dom';
 import Example from '../../../../assets/Example.jpg'
 import PostCard from '../PostCard'
 import { useState, useEffect } from 'react'
-import getPostData from '../../../../services/getPostData';
+import getPostsData from '../../../../services/getPostsData';
 
 export default function EventBoard() {
     const [eventList, setEventList] = useState([]);
@@ -10,7 +9,7 @@ export default function EventBoard() {
     useEffect(() => {
         try {
             const getData = async () => {
-                const data = await getPostData('events');
+                const data = await getPostsData('events');
                 setEventList(data);
             };
 
@@ -24,7 +23,7 @@ export default function EventBoard() {
 
     return (
         <section className="flex flex-col w-full">
-            {eventList.map((event) => <PostCard key={event.id} post={event}></PostCard>)}
+            {eventList.map((event) => <PostCard key={event.id} postType={'events'} post={event}></PostCard>)}
         </section>
     )
 }
