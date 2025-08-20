@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Logo from "../../../assets/HackathonNewsLogo.png";
 import Menu from "./Menu.jsx";
@@ -31,13 +31,20 @@ function SideBar() {
   ];
 
   // ~~~~~~~~~~~~~~~~~RESET EXPAND~~~~~~~~~~~~~~~~~~~~~~
-  window.addEventListener("resize", () => {
-    if (window.innerWidth < 1024) {
-      setExpand(true);
-    } else {
-      setShowSideBar(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1024) {
+        setExpand(true);
+      } else {
+        setShowSideBar(false);
+      }
     }
-  });
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  })
+
 
   return (
     <>
