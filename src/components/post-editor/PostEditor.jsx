@@ -110,7 +110,7 @@ export default function PostEditor({ defaultValues: propDefaultValues, onSubmit 
                 Tags:
                 {fields.map((field, index) => (<li key={field.id} className="py-1 px-2 rounded-[5px] border-1 flex items-center gap-1">
                     {field.value}
-                    <i className="fa-solid fa-x h-full duration-100 hover:bg-red-500 cursor-pointer" onClick={() => remove(index)}></i>
+                    <i className="fa-solid fa-x h-full duration-100 hover:text-red-500 cursor-pointer" onClick={() => remove(index)}></i>
                 </li>))}
             </ul>
 

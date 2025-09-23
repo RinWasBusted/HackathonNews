@@ -1,6 +1,6 @@
 import HackathonNewsLogo from '../assets/HackathonNewsLogo.png'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
 import DonateQR from '../assets/DonateQR.jpg'
 
 export default function Footer() {
@@ -23,7 +23,7 @@ export default function Footer() {
         }
     ];
 
-    const [showDonate, setShowDonate] = useState(false);
+    // const [showDonate, setShowDonate] = useState(false);
 
 
     return (
@@ -45,7 +45,7 @@ export default function Footer() {
                     {navList.map((item, index) => <Link key={index} to={item.goto} className='cursor-pointer hover:underline text-left'>{item.content}</Link>)}
                 </section>
 
-                <section className='text-primary font-bold flex flex-col gap-5 shrink-0 flex-1 border-white/20 max-lg:border-b-1 pb-5'>
+                {/* <section className='text-primary font-bold flex flex-col gap-5 shrink-0 flex-1 border-white/20 max-lg:border-b-1 pb-5'>
                     <h3 className='font-[600] text-[20px]'>Finding usefull</h3>
 
                     <button type='button' className='border-primary border-2 rounded-[5px] px-4 py-2 cursor-pointer w-fit hover:bg-primary duration hover:text-secondary group' onClick={() => setShowDonate(s => !s)}>Buy me a coffee <i className="fa-solid fa-mug-hot group-hover:scale-130 group-hover:rotate-12 duration-300"></i> ?</button>
@@ -53,18 +53,18 @@ export default function Footer() {
                     <figure className={`w-30 ${showDonate ? '' : 'scale-y-0'} origin-top overflow-hidden duration-200`}>
                         <img src={DonateQR} alt="DonateQR" className='h-full' />
                     </figure>
-                </section>
+                </section> */}
 
                 <section className='flex flex-col gap-5 shrink-0 flex-1  border-white/20 max-lg:border-b-1 pb-5'>
                     <h3 className='font-[600] text-[20px]'>Contact us</h3>
 
-                    <p className=' flex items-center gap-1'><i class="fa-solid fa-envelope"></i> thaian0609asd@gmail.com</p>
+                    <p className=' flex items-center gap-1'><i className="fa-solid fa-envelope"></i> thaian0609asd@gmail.com</p>
 
-                    <p className=' flex items-center gap-1'><i class="fa-solid fa-phone"></i> 0819124125</p>
+                    <p className=' flex items-center gap-1'><i className="fa-solid fa-phone"></i> 0819124125</p>
 
                     <nav className='flex gap-3'>
                         <a href='https://www.facebook.com/pham.hoang.thai.662571/' target='_blank' className='w-6 h-6 rounded-[50%] bg-primary cursor-pointer text-secondary text-center hover:scale-110 duration-100'><i className="fa-brands fa-facebook-f "></i></a>
-                        <a href='https://www.linkedin.com/in/th%C3%A1i-ph%E1%BA%A1m-569a73351/' target='_blank' className='w-6 h-6 rounded-[50%] bg-primary cursor-pointer text-secondary text-center hover:scale-110 duration-100'><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href='https://www.linkedin.com/in/th%C3%A1i-ph%E1%BA%A1m-569a73351/' target='_blank' className='w-6 h-6 rounded-[50%] bg-primary cursor-pointer text-secondary text-center hover:scale-110 duration-100'><i className="fa-brands fa-linkedin-in"></i></a>
                     </nav>
                 </section>
 

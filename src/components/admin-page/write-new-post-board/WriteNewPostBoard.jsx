@@ -1,17 +1,11 @@
 import Example from '../../../assets/Example.jpg'
-import addPost from '../../../services/addPost'
 import PostEditor from "../../post-editor/PostEditor"
 
 export default function WriteNewPostBoard() {
 
 
     function onSubmit(post) {
-        try {
-            addPost('events', post);
-            console.log('You have posted a new events!', post)
-        } catch (e) {
-            console.error('failed to use addPost function!' + e);
-        }
+        console.log('Add new post:', post)
     }
 
     return (

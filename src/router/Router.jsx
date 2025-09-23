@@ -14,9 +14,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
-    errorElement: (
-      <div className="text-[200px] text-red-500">404 Not Found</div>
-    ),
+    // errorElement: (
+    //   <div className="text-[200px] text-red-500">404 Not Found</div>
+    // ),
   },
   {
     path: "/post/:postType/:slug/:id",
@@ -51,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: 'write-new-post',
         element: <WriteNewPostBoard></WriteNewPostBoard>
+      },
+      {
+        path: 'setting',
+        element: <h1>Comming soon...</h1>
       }
     ]
   },

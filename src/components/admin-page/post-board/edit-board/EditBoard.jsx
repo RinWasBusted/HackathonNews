@@ -1,8 +1,6 @@
 import PostEditor from "../../../post-editor/PostEditor"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import getPost from "../../../../services/getPost";
-import updatePost from "../../../../services/updatePost";
 
 export default function EditBoard() {
 
@@ -11,27 +9,23 @@ export default function EditBoard() {
     const { postType, id } = useParams();
 
     useEffect(() => {
-        try {
-            async function fetchPostData() {
-                const data = await getPost(postType, id);
-                setPost(data);
-            };
-
-            if (postType && id) {
-                fetchPostData();
-            }
-        } catch (e) {
-            console.error('Failed to fetch post data' + e);
+        if(postType && id){
+        setPost({
+                id:1,
+                banner: "https://appsembler.com/wp-content/uploads/2024/04/10-Tips-for-Hackathon-Success-in-2024.png",
+                content: `<h1>this is h1 content</h1><p style="text-align: right;">right align testing</p><p></p>`,
+                date: '',
+                desc: 'this is the post description',
+                progress: 'ongoing',
+                tags: ["AI","Fullstack"],
+                title: '10 tips for hackathon success in 2024',
+                type: 'event'
+            })
         }
     }, [postType, id])
 
     function onSubmit(post) {
-        try {
-            updatePost(postType, id, post);
-            console.log('You have updated the events!', post)
-        } catch (e) {
-            console.error('failed to use updatePost function!' + e);
-        }
+        console.log("Update post: ", post)
     }
 
     return (

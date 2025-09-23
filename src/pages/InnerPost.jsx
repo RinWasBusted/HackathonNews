@@ -5,7 +5,6 @@ import SideBoard from "../components/home-page/side-board/SideBoard";
 import Post from "../components/inner-post/post/Post";
 import RecentBlog from "../components/home-page/recent-blog/RecentBlog";
 import { useState, useEffect } from "react";
-import getPost from '../services/getPost'
 import { useParams } from "react-router-dom";
 
 
@@ -17,18 +16,17 @@ export default function InnerPost() {
     const { postType, id } = useParams();
 
     useEffect(() => {
-        try {
-            async function fetchPostData() {
-                const data = await getPost(postType, id);
-                setPost(data);
-            };
-
-            if (postType && id) {
-                fetchPostData();
-            }
-        } catch (e) {
-            console.error('Failed to fetch post data' + e);
-        }
+        setPost({
+                id: 1,
+                banner: "https://appsembler.com/wp-content/uploads/2024/04/10-Tips-for-Hackathon-Success-in-2024.png",
+                content: `<h1>this is h1 content</h1><p style="text-align: right;">right align testing</p><p></p>`,
+                date: '',
+                desc: 'this is the post description',
+                progress: 'ongoing',
+                tags: [],
+                title: '10 tips for hackathon success in 2024',
+                type: 'event'
+            })
     }, [postType, id])
 
     return (
