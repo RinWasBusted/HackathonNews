@@ -74,7 +74,7 @@ export default function RecentBlog() {
             <main className="flex flex-col items-center gap-5 md:gap-10 w-full">
                 {blogList.slice(0, postNum).map((event) => <Post key={event.id} event={event}></Post>)}
 
-                <div className="cursor-pointer hover:underline" onClick={handleShowMore}>Show more</div>
+                <div className={`cursor-pointer hover:underline ${blogList.length == postNum && 'hidden'}`} onClick={handleShowMore}>Show more</div>
             </main>
         </section>
     )

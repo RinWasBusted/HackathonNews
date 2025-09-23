@@ -6,19 +6,6 @@ import { useState, useEffect } from "react"
 export default function RecentEvent() {
     const [eventList, setEventList] = useState([]);
 
-    // useEffect(() => {
-    //     try {
-    //         const getData = async () => {
-    //             const data = await getPostsData('events');
-    //             setEventList(data);
-    //         };
-
-    //         getData();
-    //     } catch (e) {
-    //         console.error('Failed to get post data from getPostData function' + e);
-    //     }
-    // }, [])
-
     useEffect(() => {
         setPostNum(Math.min(eventList.length, 3))
 
@@ -60,7 +47,7 @@ export default function RecentEvent() {
                 type: 'event'
             },
             {
-                id: 4,
+                id: 1,
                 banner: "https://appsembler.com/wp-content/uploads/2024/04/10-Tips-for-Hackathon-Success-in-2024.png",
                 content: `<h1>this is h1 content</h1><p style="text-align: right;">right align testing</p><p></p>`,
                 date: '',
@@ -87,7 +74,7 @@ export default function RecentEvent() {
             <main className="flex flex-col items-center gap-10 w-full">
                 {eventList.slice(0, postNum).map((event) => <Post key={event.id} event={event}></Post>)}
 
-                <div className="cursor-pointer hover:underline" onClick={handleShowMore}>Show more</div>
+                <div className={`cursor-pointer hover:underline ${eventList.length == postNum && 'hidden'}`}  onClick={handleShowMore}>Show more</div>
             </main>
         </section>
     )
